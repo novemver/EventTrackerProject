@@ -10,7 +10,7 @@ public interface DogService {
 	
 	List<Dog> listAllDogs();
 	Optional<Dog> getDog(int id);
-	Dog create(Dog dog);
+	Dog addDog(Dog dog);
 	Dog update(int id, Dog dog);
 	boolean deleteById(int id);
 }

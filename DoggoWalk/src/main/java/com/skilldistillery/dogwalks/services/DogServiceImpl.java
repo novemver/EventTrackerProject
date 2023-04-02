@@ -14,7 +14,7 @@ public class DogServiceImpl implements DogService {
 
 	@Autowired
 	private DogRepository dogRepo;
-	
+
 	@Override
 	public boolean deleteById(int id) {
 		// TODO Auto-generated method stub
@@ -29,14 +29,16 @@ public class DogServiceImpl implements DogService {
 
 	@Override
 	public Optional<Dog> getDog(int id) {
+//		Dog dog = null;
 
 		return dogRepo.findById(id);
 	}
 
 	@Override
-	public Dog create(Dog dog) {
-		// TODO Auto-generated method stub
-		return null;
+	public Dog addDog(Dog dog) {
+
+
+		return dogRepo.saveAndFlush(dog);
 	}
 
 	@Override

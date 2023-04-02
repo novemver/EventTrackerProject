@@ -47,6 +47,27 @@ public class Dog {
 	public Dog() {
 		super();
 	}
+	
+	
+
+	public Dog(int id, String name, String breed, int height, int length, int weight, boolean isFriendly,
+			String description, String dogPhoto, String owner, boolean adoptable, String healthNotes) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.breed = breed;
+		this.height = height;
+		this.length = length;
+		this.weight = weight;
+		this.isFriendly = isFriendly;
+		this.description = description;
+		this.dogPhoto = dogPhoto;
+		this.owner = owner;
+		this.adoptable = adoptable;
+		this.healthNotes = healthNotes;
+	}
+
+
 
 	public int getId() {
 		return id;
