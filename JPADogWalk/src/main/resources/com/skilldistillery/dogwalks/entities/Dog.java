@@ -1,5 +1,7 @@
 package com.skilldistillery.dogwalks.entities;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -41,17 +43,26 @@ public class Dog {
 	@Column(name="health_notes")
 	private String healthNotes;
 	
+	@Column(name="present_onsite")
+	private boolean onSite;
+
+	@Column(name="sterilized")
+	private boolean fixed;
+	
+	private String gender;
+	
+	@Column(name="birth_date")
+	private LocalDate birthDay;
 	
 //	methods
 	
 	public Dog() {
-		super();
+		
 	}
-	
-	
 
 	public Dog(int id, String name, String breed, int height, int length, int weight, boolean isFriendly,
-			String description, String dogPhoto, String owner, boolean adoptable, String healthNotes) {
+			String description, String dogPhoto, String owner, boolean adoptable, String healthNotes, boolean onSite,
+			boolean fixed, String gender, LocalDate birthDay) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -65,9 +76,11 @@ public class Dog {
 		this.owner = owner;
 		this.adoptable = adoptable;
 		this.healthNotes = healthNotes;
+		this.onSite = onSite;
+		this.fixed = fixed;
+		this.gender = gender;
+		this.birthDay = birthDay;
 	}
-
-
 
 	public int getId() {
 		return id;
@@ -165,6 +178,41 @@ public class Dog {
 		this.adoptable = adoptable;
 	}
 
+	public boolean isOnSite() {
+		return onSite;
+	}
+
+	public void setOnSite(boolean onSite) {
+		this.onSite = onSite;
+	}
+
+	public boolean isFixed() {
+		return fixed;
+	}
+
+	public void setFixed(boolean fixed) {
+		this.fixed = fixed;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+
+
+
+	public LocalDate getBirthDay() {
+		return birthDay;
+	}
+
+	public void setBirthDay(LocalDate birthDay) {
+		this.birthDay = birthDay;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -186,7 +234,8 @@ public class Dog {
 	public String toString() {
 		return "Dog [id=" + id + ", name=" + name + ", breed=" + breed + ", height=" + height + ", length=" + length
 				+ ", weight=" + weight + ", isFriendly=" + isFriendly + ", description=" + description + ", dogPhoto="
-				+ dogPhoto + ", owner=" + owner + ", adoptable=" + adoptable + ", healthNotes=" + healthNotes + "]";
+				+ dogPhoto + ", owner=" + owner + ", adoptable=" + adoptable + ", healthNotes=" + healthNotes
+				+ ", onSite=" + onSite + ", fixed=" + fixed + ", gender=" + gender + ", birthDay=" + birthDay + "]";
 	}
 	
 	
