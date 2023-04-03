@@ -52,12 +52,15 @@ public class DogServiceImpl implements DogService {
 		}
 		return dogRepo.saveAndFlush(originalDog);
 	}
-//	dog = dogService.getDog(id);
-//	dog = dogService.updateDog(id, dog);
 
-	@Override 
+	@Override
 	public boolean deleteById(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean dogGone = false;
+		Dog dogToDelete = dogRepo.findById(id);
+		if (dogToDelete != null) {
+			dogRepo.delete(dogToDelete);
+			dogGone = true;
+		}
+		return dogGone;
 	}
 }
