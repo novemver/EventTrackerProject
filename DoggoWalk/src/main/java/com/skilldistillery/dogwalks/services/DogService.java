@@ -9,8 +9,8 @@ public interface DogService {
 
 	
 	List<Dog> listAllDogs();
-	Optional<Dog> getDog(int id);
+	Dog getDog(int id);
 	Dog addDog(Dog dog);
-	Dog update(int id, Dog dog);
+	Dog updateDog(int id, Dog dog);
 	boolean deleteById(int id);
 }
