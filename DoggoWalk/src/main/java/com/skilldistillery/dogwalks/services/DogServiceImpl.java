@@ -16,35 +16,48 @@ public class DogServiceImpl implements DogService {
 	private DogRepository dogRepo;
 
 	@Override
-	public boolean deleteById(int id) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
 	public List<Dog> listAllDogs() {
 		// TODO Auto-generated method stub
 		return dogRepo.findAll();
 	}
 
 	@Override
-	public Optional<Dog> getDog(int id) {
+	public Dog getDog(int id) {
 //		Dog dog = null;
 
-		return dogRepo.findById(id);
+		return (dogRepo.findById(id));
 	}
 
 	@Override
 	public Dog addDog(Dog dog) {
 
-
 		return dogRepo.saveAndFlush(dog);
 	}
 
 	@Override
-	public Dog update(int id, Dog dog) {
-		// TODO Auto-generated method stub
-		return null;
+	public Dog updateDog(int id, Dog dog) {
+		Dog originalDog = dogRepo.findById(id);
+		if (originalDog != null) {
+			originalDog.setName(dog.getName());
+			originalDog.setBreed(dog.getBreed());
+			originalDog.setHeight(dog.getHeight());
+			originalDog.setLength(dog.getLength());
+			originalDog.setWeight(dog.getWeight());
+			originalDog.setFriendly(dog.isFriendly());
+			originalDog.setDescription(dog.getDescription());
+			originalDog.setHealthNotes(dog.getHealthNotes());
+			originalDog.setDogPhoto(dog.getDogPhoto());
+			originalDog.setOwner(dog.getOwner());
+			originalDog.setAdoptable(dog.isAdoptable());
+		}
+		return dogRepo.saveAndFlush(originalDog);
 	}
+//	dog = dogService.getDog(id);
+//	dog = dogService.updateDog(id, dog);
 
+	@Override 
+	public boolean deleteById(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
