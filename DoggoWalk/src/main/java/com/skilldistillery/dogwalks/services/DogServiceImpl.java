@@ -49,6 +49,10 @@ public class DogServiceImpl implements DogService {
 			originalDog.setDogPhoto(dog.getDogPhoto());
 			originalDog.setOwner(dog.getOwner());
 			originalDog.setAdoptable(dog.isAdoptable());
+			originalDog.setOnSite(dog.isOnSite());
+			originalDog.setFixed(dog.isFixed());
+			originalDog.setGender(dog.getGender());
+			originalDog.setBirthDay(dog.getBirthDay());
 		}
 		return dogRepo.saveAndFlush(originalDog);
 	}
