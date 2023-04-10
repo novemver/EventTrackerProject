@@ -17,48 +17,50 @@ public class Dog {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	private String name;
+	private String name; //
 	
-	private String breed;
+	private String breed; //
 	
-	private int height;
+	private int height; //
 	
-	private int length;
+	private int length;//
 
-	private int weight;
+	private int weight;//
 	
 	@Column(name="is_friendly")
-	private boolean isFriendly;
+	private boolean isFriendly;//
 	
-	private String description;
+	private String description;//
 	
 	@Column(name="dog_image")
 	private String dogPhoto;
 
-	private String owner;
+	private String owner; //
 	
 	@Column(name="needs_adoption")
-	private boolean adoptable;
+	private boolean adoptable; //
 	
 	@Column(name="health_notes")
 	private String healthNotes;
 	
 	@Column(name="present_onsite")
-	private boolean onSite;
+	private boolean onSite;//
 
 	@Column(name="sterilized")
-	private boolean fixed;
+	private boolean fixed;//
 	
-	private String gender;
+	private String gender;//
 	
 	@Column(name="birth_date")
-	private LocalDate birthDay;
+	private LocalDate birthDay;//
 	
 //	methods
 	
 	public Dog() {
 		
 	}
+
+	
 
 	public Dog(int id, String name, String breed, int height, int length, int weight, boolean isFriendly,
 			String description, String dogPhoto, String owner, boolean adoptable, String healthNotes, boolean onSite,
@@ -81,6 +83,8 @@ public class Dog {
 		this.gender = gender;
 		this.birthDay = birthDay;
 	}
+
+
 
 	public int getId() {
 		return id;

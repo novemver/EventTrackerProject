@@ -38,24 +38,37 @@ public class DogController {
 		return dogService.getDog(id);
 	}
 	
+//	@PostMapping("dog/newdog")
+//	public Dog addDogToHotel(@RequestBody Dog dog,
+//			HttpServletRequest req, HttpServletResponse res) {
+//		
+////		Dog newDog = null;
+//		try {
+//			dog = dogService.addDog(dog);
+//			if (dog == null) {
+//				res.setStatus(404);
+//			} else {
+//				res.setStatus(201);
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			res.setStatus(400);
+//			dog = null;
+//		}
+//		return dog;
+//	}
 	@PostMapping("dog/newdog")
-	public Dog addDogToHotel(@RequestBody Dog dog,
-			HttpServletRequest req, HttpServletResponse res) {
-		
-//		Dog newDog = null;
+	public Dog addDogToHotel(@RequestBody Dog dog, HttpServletResponse res) {
+		Dog created = null;
 		try {
-			dog = dogService.addDog(dog);
-			if (dog == null) {
-				res.setStatus(404);
-			} else {
-				res.setStatus(201);
-			}
+			created = dogService.addDog(dog);
+			res.setStatus(201); // successful creation
 		} catch (Exception e) {
 			e.printStackTrace();
 			res.setStatus(400);
-			dog = null;
 		}
-		return dog;
+
+		return created;
 	}
 	
 	@PutMapping("updog/{id}")

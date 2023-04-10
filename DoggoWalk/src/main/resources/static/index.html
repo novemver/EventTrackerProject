@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <title>Doggo Intervention Hotel</title>
 <script type="text/javascript" src="js/script.js"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+	crossorigin="anonymous">
 </head>
 <body>
 	<h1>Welcome to the Kennel Hotel</h1>
@@ -21,10 +26,88 @@
 
 		</table>
 	</div>
+	
+	<div id="doggoDetailsDiv">
+		<form name="seeDogForm">
+			<input type="number" name="id">
+			<button class="btn btn-success" name="lookup">Get Dog by Id Tag</button>
+		</form>
+	</div>
+	<div id="dogDataDiv"></div>
+	
 
-<div id="addNewDogGuest">
-<!-- TOTO new Dog guest form -->
-</div>
+	
+		<h3>Add Dog to Guest List</h3>
+		<form name="newDogForm">
+			<!--  title, description, release year, rating,  length-->
+			<label for="name">Name</label> <br> <input type="text"
+				name="title" placeholder="Name"> <br> <label
+				for="breed">Breed</label><br> <input type="text" name="breed"
+				placeholder="Breed"> <br> <label for="gender">Gender</label><br>
+			<input type="text" name="gender" placeholder="gender"> <br>
+			<label for="birthDay">Birthday</label><br> <input type="date"
+				name="birthDay" placeholder="Date of birth"> <br> <label
+				for="owner">Owner's name</label><br> <input type="text"
+				name="owner" placeholder="owner's name"> <br> <label
+				for="description">Description</label><br> <input type="text"
+				name="description" placeholder="description"> <br> <label
+				for="onSite">Present on site?</label><br> <input type="radio"
+				name="onSite" placeholder="onSite"> <br> <label
+				for="adoptable">Needs new home?</label><br> <input type="radio"
+				name="adoptable" placeholder="adoptable"> <br> <label
+				for="isFriendly">Friendly?</label><br> <input type="radio"
+				name="isFriendly" placeholder="isFriendly"> <br> <label
+				for="fixed">Fixed?</label><br> <input type="radio" name="fixed"
+				placeholder="fixed"> <br> <label for="height">height</label><br>
+			<input type="text" name="height" placeholder="height"> <br>
+			<label for="length">length</label><br> <input type="text"
+				name="length" placeholder="length"> <br> <label
+				for="weight">weight</label><br> <input type="text"
+				name="weight" placeholder="weight"> <br> <label
+				for="healthNotes">Health Notes</label><br> <input type="text"
+				name="healthNotes" placeholder="Health Notes"> <br>
+
+			<button class="btn btn-primary" name="addDogButton">Add Dog</button>
+
+		</form>
+
+	<div id="updateDogGuest">
+		<h3>Update Dog</h3>
+		<form name="upDogForm">
+
+
+			<input type="text" name="name" value=${upDog.name} /> <br> <label
+				for="firstName">Dog.name </label> <br> <label for="breed">Breed</label><br>
+			<input type="text" name="breed" placeholder="Breed"> <br>
+			<label for="gender">Gender</label><br> <input type="text"
+				name="gender" placeholder="gender"> <br> <label
+				for="birthDay">Birthday</label><br> <input type="date"
+				name="birthDay" placeholder="Date of birth"> <br> <label
+				for="owner">Owner's name</label><br> <input type="text"
+				name="owner" placeholder="owner's name"> <br> <label
+				for="description">Description</label><br> <input type="text"
+				name="description" placeholder="description"> <br> <label
+				for="onSite">Present on site?</label><br> <input type="radio"
+				name="onSite" placeholder="onSite"> <br> <label
+				for="adoptable">Needs new home?</label><br> <input type="radio"
+				name="adoptable" placeholder="adoptable"> <br> <label
+				for="isFriendly">Friendly?</label><br> <input type="radio"
+				name="isFriendly" placeholder="isFriendly"> <br> <label
+				for="fixed">Fixed?</label><br> <input type="radio" name="fixed"
+				placeholder="fixed"> <br> <label for="height">height</label><br>
+			<input type="text" name="height" placeholder="height"> <br>
+			<label for="length">length</label><br> <input type="text"
+				name="length" placeholder="length"> <br> <label
+				for="weight">weight</label><br> <input type="text"
+				name="weight" placeholder="weight"> <br> <label
+				for="length">Length</label><br> <input type="number"
+				name="length" placeholder="Name"> <br>
+
+			<button class="btn btn-primary" name="upDogButton">Update
+				Dog</button>
+
+		</form>
+	</div>
 
 
 
