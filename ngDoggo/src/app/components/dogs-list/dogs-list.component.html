@@ -1,0 +1,66 @@
+<h1>Dog Rescue Ranch</h1>
+<h4>Boarding and Safe house for Dogs.</h4><br>
+<p *ngIf="!selected"> Please select a Dog's name to view profile</p>
+
+<div *ngIf="!selected">
+  <table class="table table-striped">
+    <thead>
+      <th>Name</th>
+      <th>Breed</th>
+      <th>Adoptable</th>
+      <th>See Dog</th>
+      <th>Delete</th>
+    </thead>
+    <tbody class="table-hover">
+      <tr *ngFor="let dog of dogs">
+        <td class="seeElDog" (click)="displayDog(dog)">{{ dog.name | titlecase}}</td>
+        <td>{{ dog.breed }}</td>
+        <td>{{ dog.adoptable }}</td>
+
+        <td>
+          <button class="btn btn-danger" (click)="displayDog(dog)">
+            See Dog
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteDog(dog.id)">X</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="doggoDetail" *ngIf="selected">
+  <h4>{{ selected.name }}</h4>
+  <!-- <p>
+    {{ selected.breed }}
+  </p>
+  <p>Up for adoption? {{ selected.adoptable }}</p>
+  <p>Description: {{ selected.description }}</p>
+  <button class="btn btn-outline-secondary" (click)="setEditDog()">Update {{ selected.name }}</button> <br />
+  <button class="btn btn-outline-primary" (click)="displayTable()">Return to Kennel</button> -->
+<table class="table table-striped">
+<thead>
+  <th></th>
+  <th></th>
+</thead>
+<tbody>
+  <tr>Breed: {{ selected.breed }}</tr>
+  <tr>Currently {{ selected.onSite  ? 'On Site' : 'Off Site' }}</tr>
+  <tr>{{ selected.isFriendly ? 'Friendly' : 'Not Friendly' }}</tr>
+
+  <tr>{{ selected.description }}</tr>
+  <tr>{{ selected.height }} inches tall</tr>
+  <tr>{{ selected.length }} inches long</tr>
+  <tr>{{ selected.weight }} pounds</tr>
+  <tr>Owner: {{ selected.owner }} </tr>
+  <tr>{{ selected.adoptable  ? selected.name +' is'  : 'not' }} available for adoption!</tr>
+  <tr>Born: {{ selected.birthDay }}</tr>
+  <tr>{{ selected.gender }}</tr>
+  <tr>{{ selected.fixed ? 'fixed' : 'not fixed' }}</tr>
+</tbody>
+</table>
+<button class="btn btn-outline-secondary" (click)="setEditDog()">Update {{ selected.name }}</button> <br />
+  <button class="btn btn-outline-primary" (click)="displayTable()">Return to Kennel</button>
+</div>
+<!-- <div class="dogPic"><img src=`{{ selected.dogPhoto }}` alt="Dog photo"></div> -->
