@@ -1,13 +1,13 @@
 <h1 class="rainbow-letters">Rainbow Rescue Ranch</h1>
-<h4>Boarding and Safe house for Dogs.</h4>
+<h4>Boarding and Safe House for Dogs.</h4>
 <br />
-<blockquote>When life gets ruff, head to the ranch</blockquote>
+<blockquote>When Life gets Ruff, Head to the Ranch</blockquote>
 <br />
 
 <p *ngIf="!selected">Please select a Dog's name to view profile</p>
 
 <div *ngIf="!selected">
-  <table class="table table-striped">
+  <table class="table table-striped" id="listTable">
     <thead>
       <th>Name</th>
       <th>Breed</th>
@@ -171,6 +171,12 @@
       [(ngModel)]="editDog.onSite"
       [ngModelOptions]="{ standalone: true }"
     /><br />
+    <label for="isFriendly">Friendly? &nbsp;</label>
+    <input
+      type="checkbox"
+      placeholder="isFriendly"
+      [(ngModel)]="editDog.isFriendly"
+      [ngModelOptions]="{ standalone: true }"/> <br />
 
     <input
       type="text"
