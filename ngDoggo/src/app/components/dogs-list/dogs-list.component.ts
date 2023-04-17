@@ -78,6 +78,7 @@ export class DogsListComponent {
 
   setEditDog() {
     this.editDog = Object.assign({}, this.selected);
+    this.reload();
   }
 
   updateDog(dog: DogHouse) {
@@ -85,8 +86,11 @@ export class DogsListComponent {
     this.doggoService.update(dog).subscribe({
       next: (updateResult) => {
         this.editDog = null;
-
+        if (DogHouse) {
+          this.selected = updateResult;
+        }
         this.reload();
+
       },
       error: (errorUp) => {
         console.error('error updating todo:');
